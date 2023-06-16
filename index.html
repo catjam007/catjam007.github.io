@@ -1,28 +1,60 @@
-  
+<!DOCTYPE html>
 <html>
-    <head>
-      <link rel="sortcut icon" href="avatar.ico" type="image/x-icon" />
-    <title>Site de catJAM</title>
+<head>
+  <meta charset="UTF-8">
+  <title>My Autobiography in English</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>My Autobiography in English</h1>
+    <nav>
+      <ul>
+        <li><button class="topic-button" data-topic="topic1">Tópico 1</button></li>
+        <li><button class="topic-button" data-topic="topic2">Tópico 2</button></li>
+        <li><button class="topic-button" data-topic="topic3">Tópico 3</button></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <section id="topic1" class="topic">
+      <h2>Tópico 1</h2>
+      <p>Texto do tópico 1...</p>
+      <img src="imagem1.jpg" alt="Imagem 1">
+    </section>
+    
+    <section id="topic2" class="topic">
+      <h2>Tópico 2</h2>
+      <p>Texto do tópico 2...</p>
+      <img src="imagem2.jpg" alt="Imagem 2">
+    </section>
+    
+    <section id="topic3" class="topic">
+      <h2>Tópico 3</h2>
+      <p>Texto do tópico 3...</p>
+      <img src="imagem3.jpg" alt="Imagem 3">
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2023 My Autobiography in English</p>
+  </footer>
+  
+  <script>
+    const topicButtons = document.querySelectorAll('.topic-button');
+    const topics = document.querySelectorAll('.topic');
 
-    </head>
-    <body>
-          <div style="background-color:#013ADF;">
-    <!--[if gte mso 9]>
-     <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
-     <v:fill type="frame" src="background.jpg" />
-     <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
-         <![endif]-->
-          <table height="100%" width="100%" cellpadding="0" cellspacing="0" border="0">
-      <tr>
-      <td valign="top" align="left" background="background.jpg" style="background-repeat:no-repeat; background-size:cover;">
-      <h2 style="color:White">Meu site de testes do github!</h2>
-      <p style="color:White">Eai galerinha do mal, eu sou o catJAM</p> 
-      <img src="avatar1.gif" alt="Esse sou eu!" width=220 height=112> <img src="avatar2.gif" alt="Esse sou eu!" width=300 height=200>
-    <p style="color:White">Se você me chamar de um simples "gato", terás *7* anos de azar!</p>
-    <center></center>
-    <img src="avatar.gif" alt="Esse sou eu!" width=640 height=250 >
-</center>
-   <p style="color:White ">Esse site é uma homenagem ao meme do catJAM</p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/eZTS4cL4Euo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                    
-    </body>
-    </html>     
+    topicButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const topicId = button.getAttribute('data-topic');
+        topics.forEach(topic => {
+          topic.style.display = 'none';
+        });
+        document.getElementById(topicId).style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>
